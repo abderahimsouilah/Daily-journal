@@ -1,0 +1,38 @@
+<%- include("partials/header"); -%>
+<div style="padding: 0 20px; margin: 10px">
+  <h1>Home</h1>
+  <p> <%= startingContent %> </p>
+</div>
+
+<% posts.forEach(function(post){ %>
+<div
+  style="
+    padding: 0 20px;
+    margin: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+  "
+>
+  <h1><%=post.postTitle%></h1>
+  <p>
+    <%=post.postBody.substring(0, 100) + " ..."%>
+    <a href="/posts/<%=post.postTitle%>">Read More</a>
+  </p>
+</div>
+
+<% }) %>
+
+<div
+  style="
+    padding: 0 20px;
+    margin: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+  "
+>
+  <a href="/compose">
+    <h1>Write a new post! </h1>
+  </a>
+</div>
+
+<%- include("partials/footer"); -%>
